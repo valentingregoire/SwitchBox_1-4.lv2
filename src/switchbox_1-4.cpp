@@ -5,17 +5,18 @@
 
 /**********************************************************************************************************************************************************/
 
-#define PLUGIN_URI "http://moddevices.com/plugins/mod-devel/SwitchTrigger4"
+// #define PLUGIN_URI "http://moddevices.com/plugins/mod-devel/SwitchTrigger4"
+#define PLUGIN_URI "https://github.com/valentingregoire/SwitchBox_1-4.lv2"
 
 enum {IN, OUT_1, OUT_2, OUT_3, OUT_4, ACTIVE_CHANNEL};
 
 /**********************************************************************************************************************************************************/
 
-class SwitchTrigger
+class SwitchBox_1_4
 {
 public:
-    SwitchTrigger() {}
-    ~SwitchTrigger() {}
+    SwitchBox_1_4() {}
+    ~SwitchBox_1_4() {}
     static LV2_Handle instantiate(const LV2_Descriptor* descriptor, double samplerate, const char* bundle_path, const LV2_Feature* const* features);
     static void activate(LV2_Handle instance);
     static void deactivate(LV2_Handle instance);
@@ -35,13 +36,13 @@ public:
 
 static const LV2_Descriptor Descriptor = {
     PLUGIN_URI,
-    SwitchTrigger::instantiate,
-    SwitchTrigger::connect_port,
-    SwitchTrigger::activate,
-    SwitchTrigger::run,
-    SwitchTrigger::deactivate,
-    SwitchTrigger::cleanup,
-    SwitchTrigger::extension_data
+    SwitchBox_1_4::instantiate,
+    SwitchBox_1_4::connect_port,
+    SwitchBox_1_4::activate,
+    SwitchBox_1_4::run,
+    SwitchBox_1_4::deactivate,
+    SwitchBox_1_4::cleanup,
+    SwitchBox_1_4::extension_data
 };
 
 /**********************************************************************************************************************************************************/
@@ -55,21 +56,21 @@ const LV2_Descriptor* lv2_descriptor(uint32_t index)
 
 /**********************************************************************************************************************************************************/
 
-LV2_Handle SwitchTrigger::instantiate(const LV2_Descriptor* descriptor, double samplerate, const char* bundle_path, const LV2_Feature* const* features)
+LV2_Handle SwitchBox_1_4::instantiate(const LV2_Descriptor* descriptor, double samplerate, const char* bundle_path, const LV2_Feature* const* features)
 {
-    return (LV2_Handle) new SwitchTrigger();
+    return (LV2_Handle) new SwitchBox_1_4();
 }
 
 /**********************************************************************************************************************************************************/
 
-void SwitchTrigger::activate(LV2_Handle instance) {}
-void SwitchTrigger::deactivate(LV2_Handle instance) {}
+void SwitchBox_1_4::activate(LV2_Handle instance) {}
+void SwitchBox_1_4::deactivate(LV2_Handle instance) {}
 
 /**********************************************************************************************************************************************************/
 
-void SwitchTrigger::connect_port(LV2_Handle instance, uint32_t port, void *data)
+void SwitchBox_1_4::connect_port(LV2_Handle instance, uint32_t port, void *data)
 {
-    SwitchTrigger *plugin = (SwitchTrigger *) instance;
+    SwitchBox_1_4 *plugin = (SwitchBox_1_4 *) instance;
     switch (port)
     {
         case IN:             plugin->in             = (float*) data; break;
@@ -83,9 +84,9 @@ void SwitchTrigger::connect_port(LV2_Handle instance, uint32_t port, void *data)
 
 /**********************************************************************************************************************************************************/
 
-void SwitchTrigger::run(LV2_Handle instance, uint32_t n_samples)
+void SwitchBox_1_4::run(LV2_Handle instance, uint32_t n_samples)
 {
-    SwitchTrigger *plugin = (SwitchTrigger *) instance;
+    SwitchBox_1_4 *plugin = (SwitchBox_1_4 *) instance;
 
     float *in    = plugin->in;
     float *out_1 = plugin->out_1;
@@ -110,15 +111,14 @@ void SwitchTrigger::run(LV2_Handle instance, uint32_t n_samples)
 
 /**********************************************************************************************************************************************************/
 
-void SwitchTrigger::cleanup(LV2_Handle instance)
+void SwitchBox_1_4::cleanup(LV2_Handle instance)
 {
-    delete ((SwitchTrigger *) instance);
+    delete ((SwitchBox_1_4 *) instance);
 }
 
 /**********************************************************************************************************************************************************/
 
-const void* SwitchTrigger::extension_data(const char* uri)
+const void* SwitchBox_1_4::extension_data(const char* uri)
 {
     return NULL;
 }
-

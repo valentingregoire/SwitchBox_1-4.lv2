@@ -5,29 +5,24 @@
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
-<http://moddevices.com/plugins/mod-devel/SwitchTrigger4>
+<https://github.com/valentingregoire/SwitchBox_1-4.lv2>
 a lv2:Plugin, lv2:UtilityPlugin;
 
-doap:name "SwitchTrigger4";
+doap:name "SwitchBox_1-4";
 
 doap:developer [
-    foaf:name "Luis Fagundes";
-    foaf:homepage <>;
-    foaf:mbox <mailto:lhfagundes@hacklab.com.br>;
+    foaf:name "Valentin Grégoire";
+    foaf:homepage <https://github.com/valentingregoire>;
     ];
 
 doap:maintainer [
-    foaf:name "MOD Team";
-    foaf:homepage <http://moddevices.com>;
-    foaf:mbox <mailto:devel@moddevices.com>;
+    foaf:name "Valentin Grégoire";
+    foaf:homepage <https://github.com/valentingregoire>;
     ];
 
 rdfs:comment """
-The Switch Trigger gets one audio stream as input and chooses one of four outputs
-to route the audio. The output channel can be selected using the Channel control.
-
-The switch trigger was designed to use the MOD on stage. By addressing the channel
-control to a footswitch, the musician can quickly access a desired chain of effects.
+The SwitchBox_1-4 is a switch box that allows for 1 input and 4 outputs where you can route the signal to.
+It has as an advantage that the current selected output path is persisted with snaptshots.
 """;
 
 doap:license <GPL>;
@@ -82,8 +77,8 @@ lv2:port
 ];
 mod:gui [
     mod:resourcesDirectory <modgui>;
-    mod:iconTemplate <modgui/icon-switchtrigger4.html>;
-    mod:stylesheet <modgui/stylesheet-switchtrigger4.css>;
-    mod:screenshot <modgui/SwitchTrigger4.png>;
-    mod:thumbnail <modgui/SwitchTrigger4-thumb.png>;
+    mod:iconTemplate <modgui/icon-switchbox_1-4.html>;
+    mod:stylesheet <modgui/stylesheet-switchbox_1-4.css>;
+    mod:screenshot <modgui/SwitchBox_1-4.png>;
+    mod:thumbnail <modgui/SwitchBox_1-4-thumb.png>;
 ].
