@@ -77,8 +77,8 @@ lv2:port
 ];
 mod:gui [
     mod:resourcesDirectory <modgui>;
-    mod:iconTemplate <modgui/icon-switchbox_1-4.html>;
-    mod:stylesheet <modgui/stylesheet-switchbox_1-4.css>;
+    mod:iconTemplate <modgui/SwitchBox_1-4.html>;
+    mod:stylesheet <modgui/SwitchBox_1-4.css>;
     mod:screenshot <modgui/SwitchBox_1-4.png>;
     mod:thumbnail <modgui/SwitchBox_1-4-thumb.png>;
 ].

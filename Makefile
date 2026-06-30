@@ -2,9 +2,10 @@
 NAME = switchbox_1-4
 
 # installation path
-INSTALL_PATH = /usr/local/lib/lv2
+# INSTALL_PATH = /usr/local/lib/lv2
 # INSTALL_PATH = /var/modep/lv2
-COMPLETE_INSTALL_PATH = $(DESTDIR)$(INSTALL_PATH)/$(NAME).lv2
+# COMPLETE_INSTALL_PATH = $(DESTDIR)$(INSTALL_PATH)/$(NAME).lv2
+COMPLETE_INSTALL_PATH = /home/valentin/Downloads/mod-desktop-0.0.12-linux-x86_64/mod-desktop/plugins/$(NAME).lv2
 
 # compiler and linker
 CXX ?= g++
@@ -36,6 +37,7 @@ clean:
 	$(RM) src/*.o $(PLUGIN)
 
 install:
+	rm -rf $(COMPLETE_INSTALL_PATH)
 	mkdir -p $(COMPLETE_INSTALL_PATH)
 	cp $(PLUGIN) $(COMPLETE_INSTALL_PATH)
 	cp ttl/*.ttl $(COMPLETE_INSTALL_PATH)
