@@ -1,7 +1,7 @@
 <div class="mod-pedal switchbox_1-4">
   <div mod-role="drag-handle" class="mod-drag-handle"></div>
   <div class="mod-plugin-name"><h1>Switch Box 1-4</h1></div>
-  <div class="mod-control-group clearfix">
+  <div class="mod-control-group">
     <div class="mod-control">
       <div
         class="knob"
@@ -33,15 +33,6 @@
     >
       <div class="mod-pedal-output-image"></div>
     </div>
-    {{/effect.ports.audio.output}} {{#effect.ports.midi.output}}
-    <div
-      class="mod-output mod-output-disconnected switchbox_1-4-output"
-      title="{{name}}"
-      mod-role="output-midi-port"
-      mod-port-symbol="{{symbol}}"
-    >
-      <div class="mod-pedal-output-image"></div>
-    </div>
-    {{/effect.ports.midi.output}}
+    {{/effect.ports.audio.output}}
   </div>
 </div>
